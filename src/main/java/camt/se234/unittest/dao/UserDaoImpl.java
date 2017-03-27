@@ -18,6 +18,14 @@ public class UserDaoImpl {
                 .dateOfBirth(LocalDate.of(2012,11,13)).telephoneNo("0000000000").build());
         users.add(User.builder().name("NoName").username("None").password("none")
                 .dateOfBirth(LocalDate.of(2112,1,1)).telephoneNo("9999999999").build());
+        users.add(new User("Cheulong","1234","Sear",
+                LocalDate.of(1995,9,24),"0992203903"));
+        users.add(new User("Franchoi","5675","Holand",
+                LocalDate.of(1979,8,30),"0868343421"));
+        users.add(User.builder().name("Lemon").username("Lemon").password("aabbcc")
+                .dateOfBirth(LocalDate.of(2012,11,13)).telephoneNo("0000000000").build());
+        users.add(User.builder().name("Kaka").username("kaka").password("mwewww")
+                .dateOfBirth(LocalDate.of(2016,10,10)).telephoneNo("0931223122").build());
     }
 
     public List<User> getUsers(){
