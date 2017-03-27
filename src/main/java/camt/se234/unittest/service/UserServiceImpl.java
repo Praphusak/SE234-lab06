@@ -1,6 +1,7 @@
 package camt.se234.unittest.service;
 
 
+import camt.se234.unittest.dao.UserDao;
 import camt.se234.unittest.dao.UserDaoImpl;
 import camt.se234.unittest.entity.User;
 import camt.se234.unittest.exception.OldDateException;
@@ -13,8 +14,8 @@ import java.util.stream.Collectors;
 
 public class UserServiceImpl {
 
-    UserDaoImpl userDao;
-    public void setUserDao(UserDaoImpl userDao) {
+    UserDao userDao;
+    public void setUserDao(UserDao userDao) {
         this.userDao = userDao;
     }
 
