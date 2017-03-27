@@ -5,7 +5,7 @@ package camt.se234.unittest.exception;
  */
 public class OldManException extends RuntimeException {
     public OldManException(){
-        this("“You are too old");
+        this("You are too old");
     }
     public OldManException(String message) {
         super(message);
