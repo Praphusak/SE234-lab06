@@ -23,7 +23,7 @@ public class UserDaoImpl {
         users.add(new User("Franchoi","5675","Holand",
                 LocalDate.of(1979,8,30),"0868343421"));
         users.add(User.builder().name("Lemon").username("Lemon").password("aabbcc")
-                .dateOfBirth(LocalDate.of(2012,11,13)).telephoneNo("0000000000").build());
+                .dateOfBirth(LocalDate.of(2012,11,13)).telephoneNo("0000500000").build());
         users.add(User.builder().name("Kaka").username("kaka").password("mwewww")
                 .dateOfBirth(LocalDate.of(2016,10,10)).telephoneNo("0931223122").build());
     }

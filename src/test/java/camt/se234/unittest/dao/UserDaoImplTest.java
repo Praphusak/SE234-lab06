@@ -30,7 +30,16 @@ public class UserDaoImplTest {
                         new User("Honey","aabbcc","Honey",
                                 LocalDate.of(2012,11,13),"0000000000"),
                         new User("None","none","NoName",
-                                LocalDate.of(2112,1,1),"9999999999")
+                                LocalDate.of(2112,1,1),"9999999999"),
+                        new User("Cheulong","1234","Sear",
+                                LocalDate.of(1995,9,24),"0992203903"),
+                        new User("Franchoi","5675","Holand",
+                                LocalDate.of(1979,8,30),"0868343421"),
+                        new User("Lemon","aabbcc","Lemon",
+                                LocalDate.of(2012,11,13),"0000500000"),
+                        new User("kaka","mwewww","Kaka",
+                                LocalDate.of(2016,10,10),"0931223122")
+
                 ));
     }
 
@@ -84,19 +93,11 @@ public class UserDaoImplTest {
 
     @Test
     public void testGetPubAllowanceUser(){
+        List<User> list = new ArrayList<>();
         UserServiceImpl userService = new UserServiceImpl();
         UserDaoImpl userDao =new UserDaoImpl();
         userService.setUserDao(userDao);
-        assertThat(userService.getPubAllowanceUser(LocalDate.now()),containsInAnyOrder(new User("Prayuth","1234","Tu",
-                LocalDate.of(1979,2,14),"08612345678")));
-
-
-
-       assertThat(userService.getPubAllowanceUser(LocalDate.of(1900,2,14)),containsInAnyOrder());  //if anyone lessthan 20
-
-        thrown.expect(OldManException.class);
-        assertThat(userService.getPubAllowanceUser(LocalDate.of(2500, 3, 20)), containsInAnyOrder(new User("Leon","12345","Le",
-                LocalDate.of(1979,2,14),"08612345678")));
+        assertThat(userService.getPubAllowanceUser(LocalDate.of(2017,3,20)), is(list));
     }
 
 
