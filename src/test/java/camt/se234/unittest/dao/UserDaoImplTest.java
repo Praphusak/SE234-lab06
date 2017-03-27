@@ -92,7 +92,7 @@ public class UserDaoImplTest {
 
 
 
-       /* assertThat(userService.getPubAllowanceUser(LocalDate.now()),containsInAnyOrder());*/  //if anyone lessthan 20
+       assertThat(userService.getPubAllowanceUser(LocalDate.of(1900,2,14)),containsInAnyOrder());  //if anyone lessthan 20
 
         thrown.expect(OldManException.class);
         assertThat(userService.getPubAllowanceUser(LocalDate.of(2500, 3, 20)), containsInAnyOrder(new User("Leon","12345","Le",
