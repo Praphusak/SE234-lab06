@@ -41,7 +41,11 @@ public class UserDaoImplTest {
         userService.setUserDao(userDao);
         // check for the exception we expect
         thrown.expect(NullPointerException.class);
-        assertThat(userService.login("",""),is(java.util.Optional.of(null)));
+        userService.login("", "");
+
+        thrown.expect(RuntimeException.class);
+        thrown.expectMessage("User name must not contain special characters");
+        userService.login("abcd*", "1234");
 
     }
 
@@ -65,6 +69,11 @@ public class UserDaoImplTest {
 
         assertThat(userService.isAbleToGoToPub(new User("Honey","aabbcc","Honey",
                 LocalDate.of(2012,11,13),"0000000000"),LocalDate.now()),is(false));
+
+        thrown.expect(OldDateException.class);
+        assertThat(userService.isAbleToGoToPub(new User("Honey","aabbcc","Honey",
+                LocalDate.of(2060,11,13),"0000000000"),LocalDate.now()),is(false));
+
     }
 
     @Test

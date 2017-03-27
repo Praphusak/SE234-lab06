@@ -61,4 +61,8 @@ public class User {
         result = 31 * result + (telephoneNo != null ? telephoneNo.hashCode() : 0);
         return result;
     }
+
+    public String getName() {
+        return name;
+    }
 }
